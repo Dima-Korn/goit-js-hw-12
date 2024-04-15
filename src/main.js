@@ -34,9 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function onFormSubmit(event) {
   event.preventDefault();
-  searchBtn.disabled = true; // Деактивуємо кнопку пошуку під час відправки запиту
+  searchBtn.disabled = true;
   showLoader();
   clearGallery();
+  loadMoreBtn.style.display = "none"; 
   query = searchInput.value.trim();
   if (query !== "") {
     page = 1;
@@ -44,9 +45,6 @@ async function onFormSubmit(event) {
       const images = await fetchImages(query, page);
       if (page * perPage >= images.totalHits) {
         console.log("last");
-        loadMoreBtn.style.display = "none";
-      } else {
-        loadMoreBtn.style.display = "block";
       }
       searchInput.value = "";
       if (!images || !images.data.hits || images.data.hits.length === 0) {
@@ -57,7 +55,6 @@ async function onFormSubmit(event) {
           backgroundColor: "red",
           maxWidth: "500px"
         });
-        loadMoreBtn.style.display = "none";
       } else {
         renderImages(images.data.hits);
         lightbox.refresh();
@@ -65,11 +62,13 @@ async function onFormSubmit(event) {
     } catch (error) {
       console.error("Помилка під час отримання зображень:", error);
     } finally {
-      searchBtn.disabled = false; // Активуємо кнопку пошуку після завершення запиту
-      hideLoader();
+      searchBtn.disabled = false; 
+      hideLoader(); 
+      loadMoreBtn.style.display = "block";
     }
   }
 }
+
 
 async function onBtnClick() {
   page += 1;
