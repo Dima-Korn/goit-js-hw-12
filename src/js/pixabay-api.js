@@ -2,14 +2,14 @@
 import axios from 'axios';
 
 export async function fetchImages(query, page) {
-  const apiKey = '39588460-df52399cf23d63ffd2a80219a';
+  const API_KEY = '43227181-d0d7712551e06c0c43f074b98';
   const perPage = 15;
   const url = 'https://pixabay.com/api/';
 
   try {
     const response = await axios.get(url, {
       params: {
-        key: apiKey,
+        key: API_KEY,
         q: query,
         image_type: 'photo',
         orientation: 'horizontal',

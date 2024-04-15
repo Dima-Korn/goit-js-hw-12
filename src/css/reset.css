@@ -38,9 +38,16 @@ img {
 
 .search-btn {
   border-radius: 8px;
-padding: 8px 16px;
 width: 91px;
 height: 40px;
+background-color: #4e75ff;
+border-color: transparent;
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #fff;
 }
 
 body {
@@ -105,25 +112,6 @@ padding-block-end: 4px;
  justify-content: space-evenly;
 }
 
-
-
-/* .loader{
-  font-size: 28px;
-  color: #181111;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  position: relative;
-  display: none;
-}
-.loader:after{
-  content: '';
-  height: 4px;
-  width:0%;
-  display: block;
-  background: #FF3D00;
-  animation: 2s lineGrow linear infinite;
-} */
-
 .loader {
   font-size: 28px;
   color: #181111;
@@ -141,24 +129,24 @@ padding-block-end: 4px;
   background: #FF3D00;
   animation: 2s lineGrow linear infinite;
 }
-
-.load-more-loader {
-  font-size: 28px;
-  color: #181111;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  position: absolute;
-  display: none;
-}
-
-.load-more-loader::after {
-  content: '';
-  height: 4px;
-  width: 0%;
-  display: block;
-  background: #FF3D00;
-  animation: 2s lineGrow linear infinite;
-}
-
-
 @keyframes lineGrow {to{width: 100%;}}
+
+.load-more-btn {
+  border-radius: 8px;
+  margin-block-start: 40px;
+width: 125px;
+height: 40px;
+background-color: #4e75ff;
+border-color: transparent;
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #fff;
+}
+
+.load-more-btn:hover,
+.search-btn:hover {
+  background-color:  #6c8cff;
+}

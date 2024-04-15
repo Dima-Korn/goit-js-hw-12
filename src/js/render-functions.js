@@ -15,7 +15,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
 });
 
 function galleryItemsMarkup(arr) {
-  return arr.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
+  return arr.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads, id }) =>
       `<li class="gallery-item">
           <a href="${largeImageURL}" id="image-${id}">
               <img src="${webformatURL}" alt="${tags}" width="360">
