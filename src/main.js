@@ -10,8 +10,8 @@ const loadMoreBtn = document.querySelector(".load-more-btn");
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.querySelector(".search-btn");
-const loader = document.querySelector(".loader");
-const gallery = document.querySelector(".gallery");
+searchForm.addEventListener("submit", onFormSubmit);
+loadMoreBtn.addEventListener("click", onBtnClick);
 
 const perPage = 15;
 let page = 1;
@@ -20,16 +20,6 @@ let query = "";
 const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   captionsData: 'alt',
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", onBtnClick);
-  }
-
-  if (searchForm) {
-    searchForm.addEventListener("submit", onFormSubmit);
-  }
 });
 
 async function onFormSubmit(event) {

@@ -19,16 +19,9 @@ export async function fetchImages(query, page) {
       }
     });
 
-    if (response.status !== 200) {
-      throw new Error('Failed to fetch images');
-    }
-
-    if (!response.data.hits || response.data.hits.length === 0) {
-      return { data: [], error: 'No images found' };
-    }
-
     return { data: response.data, error: null };
   } catch (error) {
     return { data: [], error: error.message };
   }
 }
+
