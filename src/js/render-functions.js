@@ -13,6 +13,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     captionsData: 'alt'
 });
+const gallery = document.querySelector(".gallery");
 
 function galleryItemsMarkup(arr) {
   return arr.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads, id }) =>
@@ -31,8 +32,13 @@ function galleryItemsMarkup(arr) {
 }
 
 export function renderImages(images) {
-  const gallery = document.querySelector(".gallery");
   const newImagesMarkup = galleryItemsMarkup(images);
   gallery.insertAdjacentHTML("beforeend", newImagesMarkup);
   lightbox.refresh();
+}
+
+export function clearGallery() {
+  if (gallery) {
+    gallery.innerHTML = "";
+  }
 }
